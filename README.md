@@ -5,7 +5,6 @@
 <h2>⚡️ A Few Quick Facts</h2>
 <ul>
 <li>🔭 I’m currently working on <a href="https://github.com/Spiderpig86/Cirrus">Azure</a>.</li>
-<li>🧐 Learning about <strong>serverless architectures</strong>, <strong>distributed systems</strong>, and a bit of <strong>ML</strong>.</li>
 <li>👨‍💻 Most of my projects are available on <a href="https://github.com/jaswanthvanam">Github</a>.</li>
 <li>📝 I regulary write articles on <a href="https://blog.Jaswanth.me">my blog</a>.</li>
 <li>💬 Ping me about cloud stuff</strong>.</li>
