@@ -1,8 +1,7 @@
 <h2>Hey 👋, I'm <a href="https://Jaswanth.me/">Jaswanth</a></h2>
 <p>I'm currently a software engineer at <strong><a href="https://www.mindlance.com/">mindlance</a></strong> and formerly at <strong><a href="https://aws.azure.com/">Azure</a></strong> based in 🌁 Hyderabad. I am working on some side projects, learning a couple new dishes, and trying to conquer the world as Tannu Tuva in HOI4.</p>
-<p><a href="https://jaswanth.me"><img src="https://img.shields.io/badge/-Jaswanth.me-4E69C8?style=flat-square&amp;labelColor=4E69C8&amp;logo=Firefox&amp;link=https://Jaswanth.me" alt="Website Badge"></a> <a href="https://www.linkedin.com/in/Jaswanth/"><img src="https://img.shields.io/badge/-@Jaswanth-0077B5?style=flat-square&amp;labelColor=0077B5&amp;logo=LinkedIn&amp;link=https://www.linkedin.com/in/serbis/" alt="LinkedIn Badge"></a> <a href="https://open.spotify.com/user/1235099575"><img src="https://img.shields.io/badge/-@Jaswanth%20Lim-1ED760?style=flat-square&amp;labelColor=fff&amp;logo=Spotify&amp;link=https://open.spotify.com/user/1235099575" alt="Spotify Badge"></a></p># java
-<p>🍌 Don't forget to get some Potassium 🍌</p>
-<img align="right" src="https://media1.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" />
+<p><a href="https://jaswanth.me"><img src="https://img.shields.io/badge/-Jaswanth.me-4E69C8?style=flat-square&amp;labelColor=4E69C8&amp;logo=Firefox&amp;link=https://Jaswanth.me" alt="Website Badge"></a> <a href="https://www.linkedin.com/in/Jaswanth/"><img src="https://img.shields.io/badge/-@Jaswanth-0077B5?style=flat-square&amp;labelColor=0077B5&amp;logo=LinkedIn&amp;link=https://www.linkedin.com/in/serbis/" alt="LinkedIn Badge"></a> <a href="https://open.spotify.com/user/1235099575"><img src="https://img.shields.io/badge/-@Jaswanth%20Lim-1ED760?style=flat-square&amp;labelColor=fff&amp;logo=Spotify&amp;link=https://open.spotify.com/user/1235099575" alt="Spotify Badge"></a>
+<p> 😎Don't forget to get some Potassium </p>
 <h2>⚡️ A Few Quick Facts</h2>
 <ul>
 <li>🔭 I’m currently working on <a href="https://github.com/Spiderpig86/Cirrus">Azure</a>.</li>
