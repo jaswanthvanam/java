@@ -1,0 +1,36 @@
+{
+	"name": "ds_metadata_007",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BlobStorage_007",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CUSTOMER_ID",
+				"type": "String"
+			},
+			{
+				"name": "FULL_NAME",
+				"type": "String"
+			},
+			{
+				"name": "EMAIL_ADDRESS",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

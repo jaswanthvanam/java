@@ -1,0 +1,36 @@
+{
+	"name": "ds_bronze_sink_007",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BlobStorage_007",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CUSTOMER_ID",
+				"type": "String"
+			},
+			{
+				"name": "FULL_NAME",
+				"type": "String"
+			},
+			{
+				"name": "EMAIL_ADDRESS",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

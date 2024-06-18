@@ -1,0 +1,32 @@
+{
+	"name": "ds_json_input_landing_007",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BlobStorage_007",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "landing"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"CUSTOMER_ID": {
+					"type": "string"
+				},
+				"FULL_NAME": {
+					"type": "string"
+				},
+				"EMAIL_ADDRESS": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

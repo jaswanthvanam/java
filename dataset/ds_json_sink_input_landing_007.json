@@ -1,0 +1,19 @@
+{
+	"name": "ds_json_sink_input_landing_007",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BlobStorage_007",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "landing"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
