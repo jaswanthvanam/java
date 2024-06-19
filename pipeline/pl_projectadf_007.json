@@ -54,7 +54,14 @@
 						{
 							"name": "Switch",
 							"type": "Switch",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Set variable",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"userProperties": [],
 							"typeProperties": {
 								"on": {
@@ -68,14 +75,7 @@
 											{
 												"name": "Copy data input to landing",
 												"type": "Copy",
-												"dependsOn": [
-													{
-														"activity": "Set variable csv",
-														"dependencyConditions": [
-															"Succeeded"
-														]
-													}
-												],
+												"dependsOn": [],
 												"policy": {
 													"timeout": "0.12:00:00",
 													"retry": 0,
@@ -302,23 +302,6 @@
 														"enablePartitionDiscovery": false
 													}
 												}
-											},
-											{
-												"name": "Set variable csv",
-												"type": "SetVariable",
-												"dependsOn": [],
-												"policy": {
-													"secureOutput": false,
-													"secureInput": false
-												},
-												"userProperties": [],
-												"typeProperties": {
-													"variableName": "filename",
-													"value": {
-														"value": "@item().name",
-														"type": "Expression"
-													}
-												}
 											}
 										]
 									},
@@ -328,14 +311,7 @@
 											{
 												"name": "Copy data input",
 												"type": "Copy",
-												"dependsOn": [
-													{
-														"activity": "Set variable json",
-														"dependencyConditions": [
-															"Succeeded"
-														]
-													}
-												],
+												"dependsOn": [],
 												"policy": {
 													"timeout": "0.12:00:00",
 													"retry": 0,
@@ -587,23 +563,6 @@
 														"enablePartitionDiscovery": false
 													}
 												}
-											},
-											{
-												"name": "Set variable json",
-												"type": "SetVariable",
-												"dependsOn": [],
-												"policy": {
-													"secureOutput": false,
-													"secureInput": false
-												},
-												"userProperties": [],
-												"typeProperties": {
-													"variableName": "filename",
-													"value": {
-														"value": "@item().name",
-														"type": "Expression"
-													}
-												}
 											}
 										]
 									}
@@ -619,6 +578,23 @@
 										}
 									}
 								]
+							}
+						},
+						{
+							"name": "Set variable",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "filename",
+								"value": {
+									"value": "@item().name",
+									"type": "Expression"
+								}
 							}
 						}
 					]
