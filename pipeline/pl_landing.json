@@ -138,153 +138,13 @@
 				]
 			},
 			{
-				"name": "Copy data Bronze",
+				"name": "Copy data archive",
 				"type": "Copy",
 				"dependsOn": [
 					{
 						"activity": "Copy data Landing",
 						"dependencyConditions": [
-							"Completed"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*.csv",
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".csv"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "Name",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "Name",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": " \"Team\"",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": " \"Team\"",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": " \"Position\"",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": " \"Position\"",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": " \"Height(inches)\"",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": " \"Height(inches)\"",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": " \"Weight(lbs)\"",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": " \"Weight(lbs)\"",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": " \"Age\"",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": " \"Age\"",
-									"type": "String",
-									"physicalType": "String"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "ds_blob_landing",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "ds_bronze",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "Copy data archive",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copy data Bronze",
-						"dependencyConditions": [
-							"Completed"
+							"Succeeded"
 						]
 					}
 				],
@@ -342,45 +202,6 @@
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "Delete",
-				"type": "Delete",
-				"dependsOn": [
-					{
-						"activity": "Copy data Landing",
-						"dependencyConditions": [
-							"Skipped"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "ds_blob_landing",
-						"type": "DatasetReference"
-					},
-					"logStorageSettings": {
-						"linkedServiceName": {
-							"referenceName": "ls_delete",
-							"type": "LinkedServiceReference"
-						},
-						"path": "delete"
-					},
-					"enableLogging": true,
-					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings",
-						"recursive": true,
-						"enablePartitionDiscovery": false
-					}
-				}
 			}
 		],
 		"annotations": [],
