@@ -18,7 +18,11 @@
 						"referenceName": "df_bronze_007",
 						"type": "DatasetReference"
 					},
-					"name": "dataflowsink"
+					"name": "dataflowsink",
+					"rejectedDataLinkedService": {
+						"referenceName": "ls_BlobStorage_007",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [],

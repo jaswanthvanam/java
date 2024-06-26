@@ -22,9 +22,6 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     parameter1 as string (FULL_NAME)",
-				"}",
 				"source(output(",
 				"          CUSTOMER_ID as string,",
 				"          FULL_NAME as string,",
