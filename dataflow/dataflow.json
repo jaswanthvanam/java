@@ -23,7 +23,7 @@
 			"transformations": [],
 			"scriptLines": [
 				"parameters{",
-				"     parameter as string (CUSTOMER_ID)",
+				"     parameter1 as string (FULL_NAME)",
 				"}",
 				"source(output(",
 				"          CUSTOMER_ID as string,",
@@ -33,7 +33,10 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> sourcebronze",
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          {[} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source"
 			]

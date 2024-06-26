@@ -308,7 +308,7 @@
 												"type": "ExecuteDataFlow",
 												"dependsOn": [
 													{
-														"activity": "Delete",
+														"activity": "Copy data bronze to archive",
 														"dependencyConditions": [
 															"Succeeded"
 														]
