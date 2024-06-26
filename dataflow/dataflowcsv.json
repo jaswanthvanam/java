@@ -25,7 +25,17 @@
 					}
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "cast"
+				},
+				{
+					"name": "derivedColumn"
+				},
+				{
+					"name": "select"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          CUSTOMER_ID as string,",
@@ -35,7 +45,26 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source",
-				"source sink(allowSchemaDrift: true,",
+				"source cast(output(",
+				"          CUSTOMER_ID as integer",
+				"     ),",
+				"     errors: true) ~> cast",
+				"cast derive(ingested_by = 'jaswanth',",
+				"          ingested_timestamp = currentTimestamp(),",
+				"          ingested_date = currentDate(),",
+				"          {first name} = 'jaswanth') ~> derivedColumn",
+				"derivedColumn select(mapColumn(",
+				"          CUSTOMER_ID,",
+				"          FULL_NAME,",
+				"          EMAIL_ADDRESS,",
+				"          ingested_by,",
+				"          ingested_timestamp,",
+				"          ingested_date,",
+				"          First_Name = {first name}",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select",
+				"select sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> dataflowsink"
