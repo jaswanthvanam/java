@@ -13,7 +13,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "ds_bronze_sink_007",
+						"referenceName": "ds_archive_sink_007",
 						"type": "DatasetReference"
 					},
 					"name": "source"
@@ -22,6 +22,9 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     parameter as string (CUSTOMER_ID)",
+				"}",
 				"source(output(",
 				"          CUSTOMER_ID as string,",
 				"          FULL_NAME as string,",
@@ -30,12 +33,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> sourcebronze",
-				"source(output(",
-				"          CUSTOMER_ID as string,",
-				"          FULL_NAME as string,",
-				"          EMAIL_ADDRESS as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
+				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source"
 			]
