@@ -1,0 +1,19 @@
+{
+	"name": "ds_par_archive",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_BlobStorage_007",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "delete"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
